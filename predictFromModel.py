@@ -43,14 +43,12 @@ class prediction:
             file_loader=file_methods.File_Operation(self.file_object,self.log_writer)
             kmeans=file_loader.load_model('KMeans')
 
-            ##Code changed
-            #pred_data = data.drop(['Wafer'],axis=1)
+      
             clusters=kmeans.predict(data_scaled)#drops the first column for cluster prediction
             data_scaled['clusters']=clusters
             clusters=data_scaled['clusters'].unique()
             result=[] # initialize blank list for storing predicitons
-            # with open('EncoderPickle/enc.pickle', 'rb') as file: #let's load the encoder pickle file to decode the values
-            #     encoder = pickle.load(file)
+           
 
             for i in clusters:
                 cluster_data= data_scaled[data_scaled['clusters']==i]
