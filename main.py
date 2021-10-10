@@ -39,10 +39,6 @@ def predictRouteClient():
         elif request.form is not None:
             path = request.form['filepath']
 
-            #pred_val = pred_validation(path) #object initialization
-
-            #pred_val.prediction_validation() #calling the prediction_validation function
-
             pred = prediction(path) #object initialization
 
             # predicting for dataset present in database
